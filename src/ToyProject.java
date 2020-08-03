@@ -86,7 +86,7 @@ public class ToyProject extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(btnNewButton.getText().equals("로그아웃")) {textField.setText(""); passwordField.setText(""); btnNewButton.setText("로그인");}
+				if(btnNewButton.getText().equals("로그아웃!")) {textField.setText(""); passwordField.setText(""); btnNewButton.setText("로그인");}
 				else{
 				String id=textField.getText();
 				String pass= new String(passwordField.getPassword());
