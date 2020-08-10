@@ -260,8 +260,9 @@ public class ToyProject extends JFrame{
 							String id=textField.getText();
 							String pass=new String(passwordField.getPassword());
 							int score=Integer.parseInt(textField_5.getText());
-							//if(score>tdao.) {
-							tdao.Membership(id, pass, score);
+							int beforscore=tdao.Login(id);
+							if(score>=beforscore) {
+							tdao.Membership(id, pass, score);}
 							lblNewLabel_8.setText("");
 							textArea_1.setText("");
 							textField_4.setText("");
@@ -269,6 +270,9 @@ public class ToyProject extends JFrame{
 							
 							k=0;
 							t.stop();
+							textField_1.setText(tdao.quiz(2));
+							textField_2.setText(tdao.quiz(1));
+							textField_3.setText(tdao.quiz(0));
 							
 						}
 						
