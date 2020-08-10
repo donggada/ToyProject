@@ -94,6 +94,35 @@ public class ToyDAO {
 		return num;
 	}
 	
+	public int Login(String id) {
+		int num=-1;
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+		con=getConnection();
+		String sql="select *from toymember where id=?";
+		pstmt=con.prepareStatement(sql);
+		pstmt.setString(1,id);
+		rs=pstmt.executeQuery();
+		if(rs.next()) {
+		num=rs.getInt(3);
+		}
+		
+			
+		} catch (Exception e) {
+			System.out.println("Login 오류 "+e);
+		}finally {
+			if (rs!=null) {try {rs.close();} catch (SQLException e) {} }	
+			if (pstmt!=null) {try {pstmt.close();} catch (SQLException e) {} }
+			if (con!=null) {try {con.close();} catch (SQLException e) {} }	
+	
+					}
+		
+		
+		return num;
+	}
+	
 	
 	public String quiz(int i ,int j) {
 		String v=null;
